@@ -6,11 +6,11 @@
   "authors": [
     {
       "name": "Sheena Donnelly",
-      "homepage": "https://www.drupal.org/u/sheena_d"
+      "homepage": "https://github.com/sheena-d/drupal_feature_cards",
     }
   ],
   "support": {
-    "issues": "https://www.drupal.org/project/issues/feature_cards"
+    "issues": "https://github.com/sheena-d/drupal_feature_cards/issues"
   },
   "license": "GPL-2.0+",
   "require": {
@@ -24,6 +24,11 @@
       "type": "vcs",
       "url":  "git@github.com:alvarotrigo/fullPage.js.git"
     }
-  ]
+  ],
+  "extra": {
+    "branch-alias": {
+      "1.x-dev": "8.x-1.x"
+    }
+  }
 }
 
