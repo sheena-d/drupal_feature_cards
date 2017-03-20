@@ -17,6 +17,13 @@
     "drupal/paragraphs": "^1.1",
     "drupal/inline_entity_form": "1.x-dev",
     "drupal/entity_browser": "1.x-dev",
-    // @TODO figure out how to require the js library https://github.com/alvarotrigo/fullPage.js
-  }
+    "vendor/fullPage.js": "2.9.4"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url":  "git@github.com:alvarotrigo/fullPage.js.git"
+    }
+  ]
 }
+
