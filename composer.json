@@ -17,14 +17,7 @@
     "drupal/paragraphs": "^1.1",
     "drupal/inline_entity_form": "1.x-dev",
     "drupal/entity_browser": "1.x-dev"
-   // "vendor/fullPage.js": "2.9.4"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url":  "git@github.com:alvarotrigo/fullPage.js.git"
-    }
-  ],
   "extra": {
     "branch-alias": {
       "1.x-dev": "8.x-1.x"
