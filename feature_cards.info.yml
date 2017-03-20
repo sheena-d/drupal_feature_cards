@@ -1,0 +1,15 @@
+name: Feature Cards
+core: 8.x
+description: A quick and easy way to create and manage multiple 'single-page sites' within your drupal website.
+package: Other
+type: module
+dependencies:
+  - drupal:paragraphs
+  - drupal:node
+  - drupal:text
+  - drupal:field
+  - drupal:entity_reference
+  - drupal:inline_entity_form
+  - drupal:entity_browser
+  - drupal:entity_browser_entity_form
+  - drupal:editor

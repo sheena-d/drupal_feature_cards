@@ -1,0 +1,22 @@
+{
+  "name": "drupal/feature_cards",
+  "description": "A quick and easy way to create and manage multiple 'single-page sites' within your drupal website.",
+  "type": "drupal-module",
+  "homepage": "http://drupal.org/project/feature_cards",
+  "authors": [
+    {
+      "name": "Sheena Donnelly",
+      "homepage": "https://www.drupal.org/u/sheena_d"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/feature_cards"
+  },
+  "license": "GPL-2.0+",
+  "require": {
+    "drupal/paragraphs": "^1.1",
+    "drupal/inline_entity_form": "1.x-dev",
+    "drupal/entity_browser": "1.x-dev",
+    // @TODO figure out how to require the js library https://github.com/alvarotrigo/fullPage.js
+  }
+}

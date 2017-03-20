@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * This is the module to create a drop-down menu for the core toolbar.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_node_access().
+
+function feature_cards_node_access(\Drupal\node\NodeInterface $node, $op, $account, $langcode) {
+  // Ignore non-FAQ node.
+  if ($node->getType() !== 'feature_page') {
+    return AccessResult::neutral();
+  }
+
+  if ($op == 'view') {
+    return AccessResult::neutral();
+  }
+  elseif ($op == 'create' || $op == 'update' || $op == 'delete') {
+    if(\Drupal::currentUser()->hasPermission('administer Feature Page')) {
+      return AccessResult::allowed();
+    }
+  }
+
+  return AccessResult::neutral();
+}
+*/
+/**
+ * Implements hook_theme().
+ *
+function feature_cards_theme() {
+  return array(
+    'feature_cards_page' => array(
+      'variables' => array('content' => '', 'cards' => '', 'description' => NULL),
+      'template' => 'feature-cards-page',
+    ),
+  );
+}
+*/
+/**
+ * Implements template_preprocess_page().
+ *
+ * Overrider breadcrumbs for faq pages.
+ */
+function feature_cards_preprocess_page(&$variables){
+
+}

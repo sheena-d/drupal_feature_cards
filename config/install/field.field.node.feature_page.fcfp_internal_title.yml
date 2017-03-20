@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.fcfp_internal_title
+    - node.type.fc_feature_page
+id: node.feature_page.fcfp_internal_title
+field_name: fcfp_internal_title
+entity_type: node
+bundle: fc_feature_page
+label: 'Internal Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
+

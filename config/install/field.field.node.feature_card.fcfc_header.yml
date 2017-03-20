@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.fcfc_header
+    - paragraphs.paragraphs_type.fc_feature_card
+id: paragraph.feature_card.fcfc_header
+field_name: fcfc_header
+entity_type: paragraph
+bundle: fc_feature_card
+label: 'Feature Card Header'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
+

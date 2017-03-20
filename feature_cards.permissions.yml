@@ -1,0 +1,12 @@
+administer Feature Pages:
+  title: 'Administer Feature Pages'
+  description: 'Allows user to create, edit, publish/unpublish and delete Feature Pages.'
+  restrict access: true
+add javascript and css for Feature Pages:
+  title: 'css js Feature Pages'
+  description: 'Allows user to add CSS or JS to Feature Pages.'
+  restrict access: true
+view Feature Pages:
+  title: 'view Feature Pages'
+  description: 'Allows user to view Feature Pages.'
+  restrict access: true

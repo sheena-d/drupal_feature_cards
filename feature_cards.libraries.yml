@@ -1,0 +1,11 @@
+toolbar.tree:
+  css:
+    layout:
+      src/fullPage/jquery.fullPage.css: {}
+      css/feature_cards.css: {}
+  js:
+    js/feature_cards.js: {}
+    src/fullPage/jquery.fullPage.js: {}
+  dependencies:
+    - core/jquery
+

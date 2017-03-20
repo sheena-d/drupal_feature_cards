@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.fcfp_feature_cards
+    - node.type.fc_feature_page
+    - paragraphs.paragraphs_type.fc_feature_card
+  module:
+    - entity_reference_revisions
+id: node.fc_feature_page.fcfp_feature_cards
+field_name: fcfp_feature_cards
+entity_type: node
+bundle: fc_feature_page
+label: 'Feature Cards'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      feature_card: fc_feature_card
+    target_bundles_drag_drop:
+      feature_card:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions
+

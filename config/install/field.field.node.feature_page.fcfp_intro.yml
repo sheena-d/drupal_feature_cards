@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.fcfp_intro
+    - node.type.fc_feature_page
+  module:
+    - text
+id: node.feature_page.fcfp_intro
+field_name: fcfp_intro
+entity_type: node
+bundle: fc_feature_page
+label: 'Feature Page Intro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
