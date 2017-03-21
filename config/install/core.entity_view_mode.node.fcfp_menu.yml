@@ -1,0 +1,12 @@
+uuid: ac72e0a6-ca8d-4af9-93cc-77b45339fd7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: C2HSP3Fv1DbQeZPSn9vcvknZji6vnmxvmA_AC-cZYLE
+id: node.fcfp_menu
+label: 'Feature Page Menu'
+targetEntityType: node
+cache: true

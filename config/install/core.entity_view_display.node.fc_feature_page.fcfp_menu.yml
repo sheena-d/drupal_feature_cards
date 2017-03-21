@@ -1,0 +1,30 @@
+uuid: 83b7cefe-24c4-4699-88cf-f9ba2d463daf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.fcfp_menu
+    - field.field.node.fc_feature_page.fcfp_feature_cards
+    - field.field.node.fc_feature_page.fcfp_internal_title
+    - field.field.node.fc_feature_page.fcfp_intro
+    - node.type.fc_feature_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.fc_feature_page.fcfp_menu
+targetEntityType: node
+bundle: fc_feature_page
+mode: fcfp_menu
+content:
+  fcfp_feature_cards:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: fcfc_menu_item
+      link: ''
+    third_party_settings: {  }
+hidden:
+  fcfp_internal_title: true
+  fcfp_intro: true
+  links: true

@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.fcfc_content
+    - field.storage.paragraph.fcfp_content
     - paragraphs.paragraphs_type.fc_feature_card
   module:
     - text
-id: paragraph.feature_card.fcfc_content
-field_name: fcfc_content
+id: paragraph.fc_feature_card.fcfp_content
+field_name: fcfp_content
 entity_type: paragraph
 bundle: fc_feature_card
 label: 'Feature Card Content'
@@ -18,4 +18,3 @@ default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: text_long
-

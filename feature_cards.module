@@ -31,7 +31,7 @@ function feature_cards_node_access(\Drupal\node\NodeInterface $node, $op, $accou
 */
 /**
  * Implements hook_theme().
- *
+ */
 function feature_cards_theme() {
   return array(
     'feature_cards_page' => array(
@@ -40,12 +40,42 @@ function feature_cards_theme() {
     ),
   );
 }
-*/
+
 /**
  * Implements template_preprocess_page().
  *
  * Overrider breadcrumbs for faq pages.
  */
-function feature_cards_preprocess_page(&$variables){
+function feature_cards_preprocess_node(&$variables){
+  $type = $variables['node']->getType();
+  if($variables['node']->getType() == "fc_feature_page" && $variables['view_mode'] == 'full') {
+    $variables['content']['fcfp_menu'] = node_view($variables['node'], 'fcfp_menu');
+    drupal_set_message('hello');
+  }
+
+}
+
+/**
+ * Implements hook_theme_registry_alter
+ *
+ * Register custom templates for this module's content types, paragraph types, and display modes.
+ */
+function feature_cards_theme_registry_alter(&$theme_registry) {
+  // @TODO seems like there should be a better way to do this.
+  $theme_registry['node__fc_feature_page'] = $theme_registry['node'];
+  $theme_registry['node__fc_feature_page']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
+  $theme_registry['node__fc_feature_page']['template'] = 'node--fc-feature-page';
+
+  $theme_registry['node__fc_feature_page__fcfp_menu'] = $theme_registry['node'];
+  $theme_registry['node__fc_feature_page__fcfp_menu']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
+  $theme_registry['node__fc_feature_page__fcfp_menu']['template'] = 'node--fc-feature-page--fcfp-menu';
+
+  $theme_registry['paragraph__fc_feature_card'] = $theme_registry['paragraph'];
+  $theme_registry['paragraph__fc_feature_card']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
+  $theme_registry['paragraph__fc_feature_card']['template'] = 'paragraph--fc-feature-card';
+
+  $theme_registry['paragraph__fc_feature_card__fcfc_menu_item'] = $theme_registry['paragraph'];
+  $theme_registry['paragraph__fc_feature_card__fcfc_menu_item']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
+  $theme_registry['paragraph__fc_feature_card__fcfc_menu_item']['template'] = 'paragraph--fc-feature-card--fcfc-menu-item';
 
 }

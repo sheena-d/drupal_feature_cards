@@ -1,0 +1,29 @@
+uuid: 4957d9de-2325-4a4c-aa9b-67e047d4a820
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.fcfc_menu_item
+    - field.field.paragraph.fc_feature_card.fcfc_header
+    - field.field.paragraph.fc_feature_card.fcfc_menu_title
+    - field.field.paragraph.fc_feature_card.fcfp_content
+    - field.field.paragraph.fc_feature_card.fcfp_script
+    - field.field.paragraph.fc_feature_card.fcfp_styles
+    - paragraphs.paragraphs_type.fc_feature_card
+id: paragraph.fc_feature_card.fcfc_menu_item
+targetEntityType: paragraph
+bundle: fc_feature_card
+mode: fcfc_menu_item
+content:
+  fcfc_menu_title:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  fcfc_header: true
+  fcfp_content: true
+  fcfp_script: true
+  fcfp_styles: true

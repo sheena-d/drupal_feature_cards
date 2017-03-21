@@ -2,18 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.fcfc_header
+    - field.storage.paragraph.fcfp_styles
     - paragraphs.paragraphs_type.fc_feature_card
-id: paragraph.feature_card.fcfc_header
-field_name: fcfc_header
+  module:
+    - text
+id: paragraph.fc_feature_card.fcfp_styles
+field_name: fcfp_styles
 entity_type: paragraph
 bundle: fc_feature_card
-label: 'Feature Card Header'
+label: 'Feature card Styles'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
-
+field_type: text_long

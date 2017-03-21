@@ -1,0 +1,12 @@
+uuid: d1d2b806-2260-49b0-9180-d54338fa96bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: fR06bV8woF93BAVkgd4WYqfAeXAvaphFMgO55bLqg-8
+id: paragraph.fcfc_menu_item
+label: 'Feature Card Menu Item'
+targetEntityType: paragraph
+cache: true

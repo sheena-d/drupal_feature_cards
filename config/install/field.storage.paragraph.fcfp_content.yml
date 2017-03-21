@@ -4,8 +4,8 @@ dependencies:
   module:
     - paragraphs
     - text
-id: paragraph.fcfc_script
-field_name: fcfc_script
+id: paragraph.fcfp_content
+field_name: fcfp_content
 entity_type: paragraph
 type: text_long
 settings: {  }

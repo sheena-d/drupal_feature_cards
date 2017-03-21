@@ -1,25 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
 name: 'Feature Page'
 type: fc_feature_page
 description: 'Fancy feature shit.'
 help: ''
-has_title: true
-title_label: Question
-settings:
-  node:
-    options:
-      status: true
-      promote: false
-      sticky: false
-      revision: true
-    preview: false
-    submitted: true
-status: true
-langcode: en
 new_revision: true
 preview_mode: 1
 display_submitted: false
-dependencies:
-  module:
-    - feature_cards
-
-

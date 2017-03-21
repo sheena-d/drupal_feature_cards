@@ -1,0 +1,36 @@
+uuid: 82343258-7bd9-4454-9ebf-479a434a9c05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fc_feature_card.fcfc_header
+    - field.field.paragraph.fc_feature_card.fcfc_menu_title
+    - field.field.paragraph.fc_feature_card.fcfp_content
+    - field.field.paragraph.fc_feature_card.fcfp_script
+    - field.field.paragraph.fc_feature_card.fcfp_styles
+    - paragraphs.paragraphs_type.fc_feature_card
+  module:
+    - text
+id: paragraph.fc_feature_card.default
+targetEntityType: paragraph
+bundle: fc_feature_card
+mode: default
+content:
+  fcfc_header:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  fcfp_content:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+hidden:
+  fcfc_menu_title: true
+  fcfp_script: true
+  fcfp_styles: true

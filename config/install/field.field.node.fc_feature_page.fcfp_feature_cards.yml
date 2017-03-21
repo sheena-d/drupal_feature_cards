@@ -21,10 +21,9 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      feature_card: fc_feature_card
+      fc_feature_card: fc_feature_card
     target_bundles_drag_drop:
-      feature_card:
+      fc_feature_card:
         enabled: true
         weight: 2
 field_type: entity_reference_revisions
-

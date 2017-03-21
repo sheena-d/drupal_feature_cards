@@ -1,10 +1,13 @@
+uuid: 9ea9c456-6997-403c-b92e-f258cefce780
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.fcfp_internal_title
     - node.type.fc_feature_page
-id: node.feature_page.fcfp_internal_title
+_core:
+  default_config_hash: M4aF7dmzuuSIpRRA6ZNTRsv7PNPi2cbwAsa6VP3gU8Q
+id: node.fc_feature_page.fcfp_internal_title
 field_name: fcfp_internal_title
 entity_type: node
 bundle: fc_feature_page
@@ -16,4 +19,3 @@ default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: string
-

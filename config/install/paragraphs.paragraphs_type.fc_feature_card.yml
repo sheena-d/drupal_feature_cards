@@ -1,6 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-behavior_plugins: {  }
 id: fc_feature_card
-label: Feature Card
+label: 'Feature Card'
+behavior_plugins: {  }

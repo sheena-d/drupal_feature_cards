@@ -2,21 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.fcfc_script
+    - field.storage.paragraph.fcfc_menu_title
     - paragraphs.paragraphs_type.fc_feature_card
-  module:
-    - text
-id: paragraph.feature_card.fcfc_script
-field_name: fcfc_script
+id: paragraph.fc_feature_card.fcfc_menu_title
+field_name: fcfc_menu_title
 entity_type: paragraph
 bundle: fc_feature_card
-label: 'Feature Card Script'
+label: 'Feature Card Menu Title'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
-
-
+field_type: string

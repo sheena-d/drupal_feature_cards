@@ -1,0 +1,57 @@
+uuid: 637fec32-2fe9-413c-92c3-c36d04b4484c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fc_feature_card.fcfc_header
+    - field.field.paragraph.fc_feature_card.fcfc_menu_title
+    - field.field.paragraph.fc_feature_card.fcfp_content
+    - field.field.paragraph.fc_feature_card.fcfp_script
+    - field.field.paragraph.fc_feature_card.fcfp_styles
+    - paragraphs.paragraphs_type.fc_feature_card
+  module:
+    - text
+id: paragraph.fc_feature_card.default
+targetEntityType: paragraph
+bundle: fc_feature_card
+mode: default
+content:
+  fcfc_header:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  fcfc_menu_title:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  fcfp_content:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  fcfp_script:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  fcfp_styles:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+hidden:
+  created: true
+  status: true
+  uid: true

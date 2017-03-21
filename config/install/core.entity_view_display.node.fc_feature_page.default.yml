@@ -1,0 +1,35 @@
+uuid: caba073e-252b-4e9f-9dca-8efe69e403a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fc_feature_page.fcfp_feature_cards
+    - field.field.node.fc_feature_page.fcfp_internal_title
+    - field.field.node.fc_feature_page.fcfp_intro
+    - node.type.fc_feature_page
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.fc_feature_page.default
+targetEntityType: node
+bundle: fc_feature_page
+mode: default
+content:
+  fcfp_feature_cards:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  fcfp_intro:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  fcfp_internal_title: true
+  links: true
