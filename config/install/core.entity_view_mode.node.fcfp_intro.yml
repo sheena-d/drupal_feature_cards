@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.fcfp_intro
+label: 'Feature Page Intro'
+targetEntityType: node
+cache: true

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.fcfp_intro
+    - field.field.node.fc_feature_page.fcfp_feature_cards
+    - field.field.node.fc_feature_page.fcfp_internal_title
+    - field.field.node.fc_feature_page.fcfp_intro
+    - node.type.fc_feature_page
+  module:
+    - text
+    - user
+id: node.fc_feature_page.fcfp_intro
+targetEntityType: node
+bundle: fc_feature_page
+mode: fcfp_intro
+content:
+  fcfp_intro:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  fcfp_feature_cards: true
+  fcfp_internal_title: true
+  links: true

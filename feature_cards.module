@@ -47,12 +47,45 @@ function feature_cards_theme() {
  * Overrider breadcrumbs for faq pages.
  */
 function feature_cards_preprocess_node(&$variables){
-  $type = $variables['node']->getType();
-  if($variables['node']->getType() == "fc_feature_page" && $variables['view_mode'] == 'full') {
-    $variables['content']['fcfp_menu'] = node_view($variables['node'], 'fcfp_menu');
-    drupal_set_message('hello');
+  if($variables['node']->getType() == "fc_feature_page"){
+    if($variables['view_mode'] == 'full') {
+      $variables['fcfp_menu'] = node_view($variables['node'], 'fcfp_menu');
+      $variables['fcfp_intro'] = node_view($variables['node'], 'fcfp_intro');
+      $variables['attributes']['id'] = 'fullpage';
+      $variables['attributes']['role'] = 'main';
+      //$variables['elements']['#attached']['library'][] = 'feature_cards/fcfp_fullPage';
+    }
+    elseif ($variables['view_mode'] == 'fcfp_menu') {
+      $variables['attributes']['id'] = 'menu';
+      unset($variables['attributes']['role']);
+    }
   }
+}
 
+function feature_cards_page_attachments(array &$attachments) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if($node != null && $node->getType()) {
+    $attachments['#attached']['library'][] = 'feature_cards/fcfp_fullPage';
+  }
+}
+
+
+function feature_cards_preprocess_paragraph(&$variables) {
+  if($variables['view_mode'] == 'default') {
+    $anchor = $variables['paragraph']->get('fcfc_menu_title')->getValue();
+    $variables['attributes']['anchor'] = $anchor[0]['value'];
+    $variables['attributes']['class'][] = 'section';
+  }
+}
+
+function feature_cards_preprocess_field(&$variables) {
+  if($variables['field_name'] == 'fcfc_menu_title') {
+    $vals = $variables['element']['#items']->getValue();
+    $variables['content_attributes']['data-menuanchor'] = $vals[0]['value'];
+    foreach($variables['items'] as $key => &$item) {
+      $item['attributes']->setAttribute('href', '#' . $vals[$key]['value']);
+    }
+  }
 }
 
 /**
@@ -62,6 +95,10 @@ function feature_cards_preprocess_node(&$variables){
  */
 function feature_cards_theme_registry_alter(&$theme_registry) {
   // @TODO seems like there should be a better way to do this.
+  $theme_registry['page__node__fc_feature_page'] = $theme_registry['page'];
+  $theme_registry['page__node__fc_feature_page']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
+  $theme_registry['page__node__fc_feature_page']['template'] = 'page--node--fc-feature-page';
+
   $theme_registry['node__fc_feature_page'] = $theme_registry['node'];
   $theme_registry['node__fc_feature_page']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
   $theme_registry['node__fc_feature_page']['template'] = 'node--fc-feature-page';
@@ -78,4 +115,18 @@ function feature_cards_theme_registry_alter(&$theme_registry) {
   $theme_registry['paragraph__fc_feature_card__fcfc_menu_item']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
   $theme_registry['paragraph__fc_feature_card__fcfc_menu_item']['template'] = 'paragraph--fc-feature-card--fcfc-menu-item';
 
+  $theme_registry['field__fcfc_menu_title'] = $theme_registry['field'];
+  $theme_registry['field__fcfc_menu_title']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
+  $theme_registry['field__fcfc_menu_title']['template'] = 'field--fcfc-menu-title';
+
+  $theme_registry['field__fcfp_feature_cards'] = $theme_registry['field'];
+  $theme_registry['field__fcfp_feature_cards']['path'] = drupal_get_path('module', 'feature_cards') . '/templates';
+  $theme_registry['field__fcfp_feature_cards']['template'] = 'field--fcfp-feature-cards';
+}
+
+function feature_cards_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Add content type suggestions.
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+  }
 }
